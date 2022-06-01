@@ -22,7 +22,7 @@ class FetchLoadTimeCommand extends Command
             config('dashboard.tiles.load-time.key'),
         );
 
-        LoadTimeStore::make()->setData($ttfb);
+        LoadTimeStore::make()->setData($loadTime);
 
         $this->info('Stored data ...');
 
