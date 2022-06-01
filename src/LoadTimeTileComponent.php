@@ -5,7 +5,7 @@ namespace Quarterloop\LoadTimeTile;
 use Livewire\Component;
 use Illuminate\Support\DB;
 
-class LoadTImeTileComponent extends Component
+class LoadTimeTileComponent extends Component
 {
 
     public $position;
