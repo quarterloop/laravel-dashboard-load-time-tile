@@ -23,9 +23,9 @@ class LoadTimeTileComponent extends Component
 
         return view('dashboard-load-time-tile::tile', [
             'website'         => config('dashboard.tiles.hosting.url'),
-            'times'            => $ttfbStore->getData()['data'],
-            'lastUpdateTime'  => date('H:i:s', strtotime($ttfbStore->getLastUpdateTime())),
-            'lastUpdateDate'  => date('d.m.Y', strtotime($ttfbStore->getLastUpdateDate())),
+            'times'            => $loadTimeStore->getData()['data'],
+            'lastUpdateTime'  => date('H:i:s', strtotime($loadTimeStore->getLastUpdateTime())),
+            'lastUpdateDate'  => date('d.m.Y', strtotime($loadTimeStore->getLastUpdateDate())),
         ]);
     }
 }
