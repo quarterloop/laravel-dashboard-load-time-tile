@@ -7,7 +7,7 @@
           </svg>
         </a>
 
-        <h1 class="font-medium text-dimmed text-sm uppercase tracking-wide tabular-nums text-center">Load Time</h1>
+        <h1 class="font-medium text-dimmed text-sm uppercase tracking-wide tabular-nums text-center">Load Times</h1>
         <p class="text-dimmed lowercase tracking-wide tabular-nums text-center mr-auto ml-auto mb-3 w-full"
            style="font-size: 12px;">
            {{ $lastUpdateDate }} - {{ $lastUpdateTime }}
@@ -15,15 +15,47 @@
 
         <div class="flex flex-row flex-wrap justify-between">
           @foreach($times as $time)
-            <div class="flex flex-col w-1/3 min-w-min">
-              <div class="flex flex-row">
-                <div class="font-small text-xs text-center mb-1">{{ $time['dns'] }} ms</div>
-                <div class="font-small text-xs text-center mb-1">{{ $time['connect'] }} ms</div>
-                <div class="font-small text-xs text-center mb-1">{{ $time['send'] }} ms</div>
-                <div class="font-small text-xs text-center mb-1">{{ $time['wait'] }} ms</div>
-                <div class="font-small text-xs text-center mb-1">{{ $time['total'] }} ms</div>
+            <div class="flex flex-col min-w-min p-1 rounded border border-white border-dimmed" style="width: calc(100% / 3 - 0.5em)">
+              <div class="flex flex-row mb-3">
+                <div class="flex flex-col w-1/2">
+                  <div class="flex flex-row w-100">
+                      <div class="font-small text-xs text-right w-1/2">{{ $time['dns'] }}</div>
+                      <div class="font-small text-xs text-left w-1/2" style="">ms</div>
+                  </div>
+                  <div class="font-small text-xs text-center text-dimmed">DNS</div>
+                </div>
+                <div class="flex flex-col w-1/2">
+                  <div class="flex flex-row w-100">
+                      <div class="font-small text-xs text-right w-1/2">{{ $time['connect'] }}</div>
+                      <div class="font-small text-xs text-left w-1/2" style="">ms</div>
+                  </div>
+                  <div class="font-small text-xs text-center text-dimmed">Connect</div>
+                </div>
               </div>
-              <div class="font-small text-xs text-center">{{ $time['country'] }}</div>
+              <div class="flex flex-row mb-3">
+                <div class="flex flex-col w-1/2">
+                  <div class="flex flex-row w-100">
+                      <div class="font-small text-xs text-right w-1/2">{{ $time['send'] }}</div>
+                      <div class="font-small text-xs text-left w-1/2" style="">ms</div>
+                  </div>
+                  <div class="font-small text-xs text-center text-dimmed">Send</div>
+                </div>
+                <div class="flex flex-col w-1/2">
+                  <div class="flex flex-row w-100">
+                      <div class="font-small text-xs text-right w-1/2">{{ $time['wait'] }}</div>
+                      <div class="font-small text-xs text-left w-1/2" style="">ms</div>
+                  </div>
+                  <div class="font-small text-xs text-center text-dimmed">Wait</div>
+                </div>
+              </div>
+              <div class="flex flex-col mb-3">
+                <div class="flex flex-row w-100">
+                    <div class="font-small text-xs text-right w-1/2">{{ $time['total'] }}</div>
+                    <div class="font-small text-xs text-left w-1/2" style="">ms</div>
+                </div>
+                <div class="font-small text-xs text-center w-100 text-dimmed">Total</div>
+              </div>
+              <div class="font-small text-xs text-center m-1">{{ $time['country'] }}</div>
             </div>
           @endforeach
         </div>
