@@ -19,7 +19,7 @@ class FetchLoadTimeCommand extends Command
 
         $loadTime = $loadTime_api::getLoadTime(
             config('dashboard.tiles.hosting.url'),
-            config('dashboard.tiles.load-time.key'),
+            config('dashboard.tiles.geekflare.key'),
         );
 
         LoadTimeStore::make()->setData($loadTime);
