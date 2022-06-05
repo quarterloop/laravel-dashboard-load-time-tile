@@ -5,6 +5,7 @@ namespace Quarterloop\LoadTimeTile\Commands;
 use Illuminate\Console\Command;
 use Quarterloop\LoadTimeTile\Services\LoadTimeAPI;
 use Quarterloop\LoadTimeTile\LoadTimeStore;
+use Session;
 
 class FetchLoadTimeCommand extends Command
 {
@@ -18,7 +19,7 @@ class FetchLoadTimeCommand extends Command
         $this->info('Fetching load time data ...');
 
         $loadTime = $loadTime_api::getLoadTime(
-            config('dashboard.tiles.hosting.url'),
+            Session::get('website'),
             config('dashboard.tiles.geekflare.key'),
         );
 
