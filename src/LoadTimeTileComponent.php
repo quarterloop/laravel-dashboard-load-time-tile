@@ -23,7 +23,7 @@ class LoadTimeTileComponent extends Component
 
         return view('dashboard-load-time-tile::tile', [
             'website'         => config('dashboard.tiles.hosting.url'),
-            'times'            => $loadTimeStore->getData()['data'],
+            'time'            => $loadTimeStore->getData()['data'],
             'lastUpdateTime'  => date('H:i:s', strtotime($loadTimeStore->getLastUpdateTime())),
             'lastUpdateDate'  => date('d.m.Y', strtotime($loadTimeStore->getLastUpdateDate())),
         ]);

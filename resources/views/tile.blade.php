@@ -14,8 +14,6 @@
         </p>
 
         <div class="flex flex-row flex-wrap justify-between">
-          @foreach($times as $time)
-            <div class="flex flex-col min-w-min p-1 rounded border border-white border-dimmed" style="width: calc(100% / 3 - 0.5em)">
               <div class="flex flex-row mb-3">
                 <div class="flex flex-col w-1/2">
                   <div class="flex flex-row w-100">
@@ -56,8 +54,6 @@
                 <div class="font-small text-xs text-center w-100 text-dimmed">Total</div>
               </div>
               <div class="font-small text-xs text-center m-1">{{ $time['country'] }}</div>
-            </div>
-          @endforeach
         </div>
 
     </div>
