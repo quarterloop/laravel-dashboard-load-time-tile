@@ -13,47 +13,32 @@
            {{ $lastUpdateDate }} - {{ $lastUpdateTime }}
         </p>
 
-        <div class="flex flex-row flex-wrap justify-between">
-              <div class="flex flex-row mb-3">
-                <div class="flex flex-col w-1/2">
-                  <div class="flex flex-row w-100">
-                      <div class="font-small text-xs text-right w-1/2">{{ $time['dns'] }}</div>
-                      <div class="font-small text-xs text-left w-1/2" style="">ms</div>
-                  </div>
-                  <div class="font-small text-xs text-center text-dimmed">DNS</div>
-                </div>
-                <div class="flex flex-col w-1/2">
-                  <div class="flex flex-row w-100">
-                      <div class="font-small text-xs text-right w-1/2">{{ $time['connect'] }}</div>
-                      <div class="font-small text-xs text-left w-1/2" style="">ms</div>
-                  </div>
-                  <div class="font-small text-xs text-center text-dimmed">Connect</div>
-                </div>
-              </div>
-              <div class="flex flex-row mb-3">
-                <div class="flex flex-col w-1/2">
-                  <div class="flex flex-row w-100">
-                      <div class="font-small text-xs text-right w-1/2">{{ $time['send'] }}</div>
-                      <div class="font-small text-xs text-left w-1/2" style="">ms</div>
-                  </div>
-                  <div class="font-small text-xs text-center text-dimmed">Send</div>
-                </div>
-                <div class="flex flex-col w-1/2">
-                  <div class="flex flex-row w-100">
-                      <div class="font-small text-xs text-right w-1/2">{{ $time['wait'] }}</div>
-                      <div class="font-small text-xs text-left w-1/2" style="">ms</div>
-                  </div>
-                  <div class="font-small text-xs text-center text-dimmed">Wait</div>
-                </div>
-              </div>
-              <div class="flex flex-col mb-3">
-                <div class="flex flex-row w-100">
-                    <div class="font-small text-xs text-right w-1/2">{{ $time['total'] }}</div>
-                    <div class="font-small text-xs text-left w-1/2" style="">ms</div>
-                </div>
-                <div class="font-small text-xs text-center w-100 text-dimmed">Total</div>
-              </div>
-        </div>
+          <ul class="mt-auto mb-auto">
+            <li class="p-1 w-100 flex">
+                <span class="w-1/2 text-left font-small text-xs">DNS</span>
+                <span class="w-1/2 text-right font-small text-xs">{{ $time['dns'] }} ms</span>
+            </li>
+            <li class="p-1 w-100 flex">
+                <span class="w-1/2 text-left font-small text-xs">Connect</span>
+                <span class="w-1/2 text-right font-small text-xs">{{ $time['connect'] }} ms</span>
+            </li>
+            <li class="p-1 w-100 flex">
+                <span class="w-1/2 text-left font-small text-xs">TLS</span>
+                <span class="w-1/2 text-right font-small text-xs">{{ $time['tls'] }} ms</span>
+            </li>
+            <li class="p-1 w-100 flex">
+                <span class="w-1/2 text-left font-small text-xs">Send</span>
+                <span class="w-1/2 text-right font-small text-xs">{{ $time['send'] }} ms</span>
+            </li>
+            <li class="p-1 w-100 flex">
+                <span class="w-1/2 text-left font-small text-xs">Wait</span>
+                <span class="w-1/2 text-right font-small text-xs">{{ $time['wait'] }} ms</span>
+            </li>
+            <li class="p-1 w-100 flex">
+                <span class="w-1/2 text-left font-small text-xs">Total</span>
+                <span class="w-1/2 text-right font-small text-xs">{{ $time['total'] }} ms</span>
+            </li>
+          </ul>
 
     </div>
 </x-dashboard-tile>
