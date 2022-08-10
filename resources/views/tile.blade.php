@@ -53,7 +53,6 @@
                 </div>
                 <div class="font-small text-xs text-center w-100 text-dimmed">Total</div>
               </div>
-              <div class="font-small text-xs text-center m-1">{{ $time['country'] }}</div>
         </div>
 
     </div>
