@@ -12,8 +12,7 @@ class LoadTimeAPI
       $response = Http::withHeaders([
         'x-api-key' => $key,
       ])->post('https://api.geekflare.com/loadtime', [
-        'url' => $url,
-        'locations' => [ "uk", "us", "sg" ],
+        'url' => $url
       ])->json();
 
       return $response;
